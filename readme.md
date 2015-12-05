@@ -1,11 +1,21 @@
 # watson
-typed service contracts for Play and Scala
 
-Problem
-HTTP web services implicitly have contracts. However, defining them is usually done through documentation which is separate from the code. The service then has to hack together a bunch of rules to validate that a request conforms to the contract and then has to form some sort of response back to the user that makes sense. Its the latter part here that is usually messy, inconsistent from docs, and kind of a pain to have to do in any web service.
+A library for creating typed service contracts for Play in Scala. This is very much
+a work in progress.
 
-Goal
-Create some sort of type tree or AST that can represent all of the required components. Something to the effect of:
+Some notes and thoughts below.
+
+## Problem
+HTTP web services implicitly have contracts. However, defining them is usually done
+through documentation which is separate from the code. The service then has to hack
+together a bunch of rules to validate that a request conforms to the contract and
+then has to form some sort of response back to the user that makes sense. Its the
+latter part here that is usually messy, inconsistent from docs, and kind of a pain
+to have to do in any web service.
+
+## Goal
+Create some sort of type tree or AST that can represent all of the required components.
+Something to the effect of:
 
 ```scala
 val s = Service(
@@ -36,7 +46,7 @@ From the types above we can deduce the following:
 - required `id` and optional `code` querystring
 - optional group of params, all of which must either be present or absent
 
-Implementation Thoughts
+## Implementation Thoughts
 
 - The `handle` function’s `request` param
     - Will need to be some generic type such as `Request`
