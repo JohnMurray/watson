@@ -1,0 +1,6 @@
+ToDo's
+------
+[ ] fix SBT build issues
+[ ] add Play framework as a dep that dissapears when releasing (to allow the user to specify the version)
+[ ] replace Http.Request and Http.Respose with Play types
+[ ] edit build def for macros (if any changes are needed there)
